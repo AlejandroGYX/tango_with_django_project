@@ -5,7 +5,11 @@ from rango.forms import CategoryForm, PageForm, UserForm, UserProfileForm
 from django.urls import reverse
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+<<<<<<< HEAD
 from datetime import datetime
+=======
+
+>>>>>>> temp
 
 
 def index(request):
@@ -22,6 +26,7 @@ def index(request):
     visitor_cookie_handler(request)
 
     return render(request, 'rango/index.html', context=context_dict)
+
 
 def about(request):
     context_dict = {}
@@ -156,6 +161,7 @@ def user_logout(request):
     logout(request)
     return redirect(reverse('rango:index'))
 
+<<<<<<< HEAD
 def get_server_side_cookie(request, cookie, default_val=None):
     val = request.session.get(cookie)
     if not val:
@@ -175,3 +181,5 @@ def visitor_cookie_handler(request):
         request.session['last_visit'] = last_visit_cookie
     
     request.session['visits'] = visits
+=======
+>>>>>>> temp
